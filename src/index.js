@@ -49,7 +49,7 @@ export default class CloudStorage {
 
     if ((type === 'wxml' || type === 'css' || type === 'page') && code) {
       const reg = /(\.{0,2}(\"|\'))+(\S+)\.(png|jpg|jpeg|gif|bmp|webp)/gi;
-      const images = code.match(reg) || [];
+      let images = code.match(reg) || [];
       images = [...new Set(images)]
       images.map(image => {
         try {
